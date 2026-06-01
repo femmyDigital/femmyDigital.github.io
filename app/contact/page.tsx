@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import { sendEmail } from "@/lib/email";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -41,18 +42,29 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setSubmitted(true);
-    setLoading(false);
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      projectType: "web-dev",
-      message: "",
+    // Form Submission
+    const result = await sendEmail({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      projectType: formData.projectType,
+      message: formData.message,
     });
+
+    setLoading(false);
+
+    if (result.success) {
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        projectType: "web-dev",
+        message: "",
+      });
+    } else {
+      alert(result.message);
+    }
 
     // Reset after 3 seconds
     setTimeout(() => setSubmitted(false), 3000);

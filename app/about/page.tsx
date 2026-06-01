@@ -55,7 +55,7 @@ const processSteps = [
 const aboutStats = [
   { number: "30+", label: "Projects Delivered" },
   { number: "20+", label: "Happy Clients" },
-  { number: "6+", label: "Years Experience" },
+  { number: "5+", label: "Years Experience" },
   { number: "100%", label: "Client Satisfaction" },
 ];
 
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-lg text-muted-foreground">
                   We combine strategic thinking, cutting-edge technology, and
-                  creative problem-solving to deliver exceptional results.
+                  creative problem solving to deliver exceptional results.
                 </p>
               </div>
               <div>

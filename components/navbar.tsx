@@ -27,8 +27,6 @@ export function Navbar() {
     setMounted(true);
   }, []);
 
-  console.log(theme);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -110,8 +108,8 @@ export function Navbar() {
           </button>
         </div>
       </nav>
-
       {/* Mobile menu */}
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -119,9 +117,11 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="glass-strong overflow-hidden md:hidden"
+            className="glass-strong overflow-hidden md:hidden "
           >
-            <div className="flex flex-col gap-4 px-6 py-6">
+            <div
+              className={`flex flex-col gap-4 px-6 py-6 ${theme === "dark" ? "bg-black" : "bg-white"}`}
+            >
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}

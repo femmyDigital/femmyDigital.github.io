@@ -13,7 +13,7 @@ import { testimonials } from "@/lib/data/testimonials";
 const homeStats = [
   { number: "30+", label: "Projects Delivered", suffix: "" },
   { number: "20+", label: "Happy Clients", suffix: "" },
-  { number: "6+", label: "Years Experience", suffix: "" },
+  { number: "5+", label: "Years Experience", suffix: "" },
   { number: "100%", label: "Uptime Average", suffix: "" },
 ];
 

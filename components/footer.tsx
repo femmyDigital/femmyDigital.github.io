@@ -30,9 +30,13 @@ const footerLinks = [
 ];
 
 const socials = [
-  { label: "GitHub", href: "https://github.com", icon: Github },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-  { label: "Twitter", href: "https://twitter.com", icon: Twitter },
+  { label: "GitHub", href: "https://github.com/femmyDigital", icon: Github },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/oluwafemi-bakare-606bb81b7/",
+    icon: Linkedin,
+  },
+  { label: "Twitter", href: "https://x.com/FemmyDigital", icon: Twitter },
 ];
 
 export function Footer() {
